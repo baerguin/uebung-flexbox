@@ -28,14 +28,19 @@ section{
 	width:  100%;
 	padding: 1rem 0;
 	min-height: 300px;
-
+	display: flex;
+	justify-content: space-between; /*x-Achse*/
+	align-items: stretch; /*y-Achse*/
 }
 
 
 .col{
 	width: 50px;
 	min-height: 50px;
-
+	flex-grow: 1; /*kann das Element wachsen, nur 0 oder 1 möglich*/
+	flex-shrink: 1;
+	flex-basis: auto;
+	flex: 1 1 auto; /*Kurzschreibweise für flex-grow, flex-shrink und flex-basis */
 }
 
 .trolley-grey{
@@ -44,8 +49,69 @@ section{
 
 .sea-green{
 	background: #2D93AD;
+	order: -1;
+}
+
+.orange{
+	background: #ffa500;
 }
 
 .middle-red{
 	background: #DE8F6E;
+	order:-2;
+}
+
+.black{
+	background: black;
+}
+
+.yellow {
+	background: yellow;
+}
+
+.red {
+	background: red;
+}
+
+.transparent {
+	background: transparent;
+}
+
+#einhorn {
+	display: none;
+}
+
+/*media query ab 1024px*/
+@media (min-width:64em) {
+	.row.quer{
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: stretch;
+	position: relative;
+		}
+		
+.col-xl {
+	flex: 1 1 auto;
+	width: 100%;
+}
+.yellow {
+	order:1;
+}
+
+.transparent {
+	order:2;
+	display:none;
+}
+#einhorn {
+	display:block;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	height: 80%;
+}
+
+#flag{
+
+}
 }
